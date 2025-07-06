@@ -17,12 +17,9 @@ export default function Header() {
     <header className="w-full border-b bg-white shadow-sm">
       <div className="max-w-7xl mx-auto px-6 flex">
         <div className="flex items-center w-full py-4 gap-6">
-          {/* LOGO */}
           <NavLink to="/">
             <img src="/assets/svg/logo.svg" className="h-12 w-12 object-contain " alt="Logo" />
           </NavLink>
-
-          {/* MOBILE MENU BUTTON */}
           <button
             className="md:hidden text-neutral-600 focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
@@ -30,12 +27,9 @@ export default function Header() {
             {isOpen ? <X size={28} /> : <Menu size={28} />} {/* Toggle icon */}
           </button>
 
-          {/* NAVIGATION (Desktop) */}
           <nav className="hidden md:flex items-center gap-5">
             <NavLink to="/" className={getLinkClass}>Home</NavLink>
-            <NavLink to="/contact" className={getLinkClass}>Contact</NavLink>
-            <NavLink to="/about" className={getLinkClass}>About</NavLink>
-            <NavLink to="/services" className={getLinkClass}>Services</NavLink>
+
 
             {userId && (
               <NavLink to="/generate" className={getLinkClass}>
